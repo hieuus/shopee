@@ -1,0 +1,230 @@
+/*Base CSS*/
+:root{
+	--primary-color: #d0011b;
+	--white-color: #fff;
+	--black-color: #000;
+	--text-color: #333;
+	--border-color: #dbdbdb;
+}
+
+*{
+	box-sizing: inherit;
+	/*Thẻ con kế thừa từ thẻ chứa nó*/
+}
+
+html{
+	font-size: 62.5%;
+	line-height: 1.6rem;
+	font-family: 'Roboto', sans-serif;
+	box-sizing: border-box;
+}
+
+.grid{
+	width: 1200px;
+	max-width: 100%;
+	margin: 0 auto; /*căn giữa*/
+}
+
+.grid__full-width{
+	width: 100%
+}
+
+.grid__row{
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -5px;
+	/*margin-right: -5px;*/
+}
+
+/*Test*/
+.grid__column-2{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 16.6667%;
+}
+
+.grid-column-2-4{
+	
+    padding-right: 5px;
+    width: 196px;
+	display: inline-block;
+}
+
+.grid__column-10{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 83.3333%;
+}
+
+/*Animation*/
+@keyframes fadeIn{
+	from{
+		opacity: 0;
+	}
+	to{
+		opacity: 1;
+	}
+}
+
+@keyframes growth{
+	from{
+		transform: scale(var(--growth-from));
+	}
+	to{
+		transform: scale(var(--growth-to));
+	}
+}
+
+/*Modal*/
+.modal{
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	display: flex;
+	animation: fadeIn linear 0.1s;
+}
+
+.modal__overlay{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal__body{
+	--growth-from: 0.7;
+	--growth-to: 1;
+	margin: auto;
+	position: relative;
+	z-index: 1;
+	animation: growth linear 0.1s;
+}
+
+/*Btn style*/
+.btn{
+	min-width: 142px;
+	height: 34px;
+	
+	background-color: var(--white-color);
+
+	text-decoration: none;
+	border-radius: 2px;
+	border: none;
+	
+	font-size: 1.4rem;
+	padding: 0 8px;;
+	outline: none;
+	cursor: pointer;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.btn.btn--normal:hover{
+	background-color: rgba(0,0,0,0.05);
+}
+
+.btn.btn--size-s{
+	height: 32px;
+	font-size: 1.2rem;
+}
+
+.btn.btn--primary{
+	color: var(--white-color);
+	background: var(--primary-color);
+}
+
+/*Select Btn*/
+.select-input{
+	min-width: 180px;
+	height: 34px;
+	padding: 0 12px;
+	border-radius: 3px;
+	background-color: white;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+	cursor: pointer;
+}
+
+.select-input:hover .select-input__list{
+	display: block;
+
+}
+
+.slect-input__lable{
+	font-size: 1.4rem;
+}
+
+.slect-input__icon{
+	font-size: 1.4rem;
+	color: rgba(131,131,131);
+	position: relative;
+}
+
+.select-input__list{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 72%;
+	border-radius: 3px;
+	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+	background-color: white;
+	padding: 10px 16px;
+	list-style: none;
+	display: none;
+	z-index: 1;
+}
+
+.select-input__link{
+	font-size: 1.4rem;
+	text-decoration: none;
+	color: var(--text-color);
+	display: block;
+	padding: 5px 0;
+}
+
+.select-input__link:hover{
+	color: var(--primary-color);
+}
+
+/*Pagination*/
+.pagination{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	list-style: none;
+}
+.pagination-item{
+	margin: 0 10px;
+}
+.pagination-item__link{
+	text-decoration: none;
+	text-align: center;
+	font-size: 2rem;
+	font-weight: 300;
+	color: #939393;
+	display: block;
+	min-width: 40px;
+	line-height: 30px;
+	height: 30px;
+	border-radius: 3px;
+}
+
+.pagination-item--active{
+	color: white;
+	background-color: var(--primary-color);
+}
+
+.pagination-item--active .pagination-item__link:hover{
+	background-color: #d45767;
+}
+
+/*Footer*/
+.grid__column-footer{
+	padding: 0 5px;
+	width: 20%;
+}
